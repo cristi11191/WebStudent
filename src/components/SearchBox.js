@@ -1,10 +1,11 @@
 import React from 'react';
-import '../styles/searchbox.css';
+import '../styles/styles.css';
+import { UilSearch } from '@iconscout/react-unicons';
 
 const SearchBox = () => {
   return (
     <div className="search-box">
-      <i className="uil uil-search"></i>
+      <UilSearch className="uil uil-search"></UilSearch>
       <input type="text" placeholder="Search here..." />
     </div>
   );

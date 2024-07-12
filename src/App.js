@@ -1,15 +1,17 @@
-import React from 'react';
-import './styles/styles.css';
-import Navbar from './components/Navbar';
+import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
+import Navbar from './components/Navbar';
+import './styles/styles.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Dashboard />
-    </div>
-  );
-}
+const App = () => {
+    
+
+    return (
+        <div className="app">
+                    <Navbar />
+                    <Dashboard />
+        </div>
+    );
+};
 
 export default App;

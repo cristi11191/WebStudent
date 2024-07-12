@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../styles/dashboard.css';
 import SearchBox from './SearchBox';
 import Overview from './Overview';
 import Activity from './Activity';
 import { UilBars } from '@iconscout/react-unicons';
 import useSidebar from '../hooks/useSidebar'; 
+import '../styles/styles.css';
 
 const Dashboard = () => {
     const [isSidebarOpen, toggleSidebar] = useSidebar();

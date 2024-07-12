@@ -7,6 +7,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
+
 :root{
     /* ===== Colors ===== */
     --primary-color: #0E4BF1;
@@ -325,6 +328,17 @@ nav.close ~ .dashboard .top{
     font-weight: 400;
     outline: none;
 }
+
+.uil-search{
+    position: absolute !important;
+    left: 15px;
+    font-size: 22px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--black-light-color);
+}
+
 .top .search-box .nav-imgs{
     position: absolute;
     left: 15px;
@@ -529,3 +543,5 @@ nav.close ~ .dashboard .top{
         width: 100%;
     }
 }
+
+

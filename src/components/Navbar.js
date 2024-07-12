@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/navbar.css';
+import '../styles/styles.css';
 import logo from '../assets/images/logo.png';
 
-import { UilMoon, UilSignout, UilEstate , UilFilesLandscapes, UilChart, UilThumbsUp , UilComments, UilShare, UilBars } from '@iconscout/react-unicons';
+import { UilMoon, UilSignout, UilEstate , UilFilesLandscapes, UilChart, UilThumbsUp , UilComments, UilShare } from '@iconscout/react-unicons';
 import useDarkMode from '../hooks/useDarkMode';
 
 const Navbar = () => {

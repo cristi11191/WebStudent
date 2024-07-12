@@ -1,6 +1,5 @@
 import React from 'react';
-import '../styles/overview.css';
-
+import '../styles/styles.css';
 const Overview = () => {
   return (
     <div className="overview">
