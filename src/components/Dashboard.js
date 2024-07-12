@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import '../styles/styles.css';
+import '../styles/dashboard.css';
 import SearchBox from './SearchBox';
 import Overview from './Overview';
 import Activity from './Activity';
-import StyleSettings from './StyleSettings';
 import { UilBars } from '@iconscout/react-unicons';
 import useSidebar from '../hooks/useSidebar'; 
 

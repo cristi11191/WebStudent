@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/styles.css';
+import '../styles/navbar.css';
 import logo from '../assets/images/logo.png';
 
 import { UilMoon, UilSignout, UilEstate , UilFilesLandscapes, UilChart, UilThumbsUp , UilComments, UilShare, UilBars } from '@iconscout/react-unicons';
