@@ -1,28 +1,52 @@
 import React from 'react';
 import '../styles/styles.css';
+import { UilTachometerFastAlt } from '@iconscout/react-unicons';
+
 const Overview = () => {
   return (
     <div className="overview">
       <div className="title">
-        <i className="uil uil-tachometer-fast-alt"></i>
+        <UilTachometerFastAlt className="uil uil-tachometer-fast-alt"></UilTachometerFastAlt>
         <span className="text">Dashboard</span>
       </div>
       <div className="boxes">
         <div className="box box1">
-          <i className="uil uil-thumbs-up"></i>
-          <span className="text">Total Likes</span>
-          <span className="number">50,120</span>
+          <div className="photo">
+            <img src="path_to_photo.jpg" alt="Profile Photo" />
+            <button className="edit-button">Edit Photo</button>
+          </div>
+          <div className="info">
+            <div className="field">
+              <span className="field-name text">Name:</span>
+              <span className="field-value">John Bond</span>
+            </div>
+            <div className="field">
+              <span className="field-name text">Birth Date:</span>
+              <span className="field-value">1990-01-01</span>
+            </div>
+            <div className="field">
+              <span className="field-name text">Birth City:</span>
+              <span className="field-value">New York</span>
+            </div>
+            <div className="field">
+              <span className="field-name text">City:</span>
+              <span className="field-value">Los Angeles</span>
+            </div>
+            <div className="field">
+              <span className="field-name text">Address:</span>
+              <span className="field-value">123 Main St</span>
+            </div>
+            <div className="field">
+              <span className="field-name text">Phone Number:</span>
+              <span className="field-value">123-456-7890</span>
+            </div>
+          </div>
         </div>
-        <div className="box box2">
-          <i className="uil uil-comments"></i>
-          <span className="text">Comments</span>
-          <span className="number">20,120</span>
-        </div>
-        <div className="box box3">
-          <i className="uil uil-share"></i>
-          <span className="text">Total Share</span>
-          <span className="number">10,120</span>
-        </div>
+
+<div className="box box2" id="news-box">
+  
+</div>
+
       </div>
     </div>
   );

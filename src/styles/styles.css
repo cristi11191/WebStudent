@@ -1,3 +1,8 @@
+/* ===IMPORTS==*/
+@import url('./overview.css');
+
+
+
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
@@ -6,6 +11,117 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+
+
+
+/**/
+
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: var(--box1-color);
+    transition: var(--tran-05);
+  }
+  
+  .box .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .box .info .field {
+    display: flex;
+    justify-content: space-between; /* Align field-name on left and field-value on right */
+  }
+  
+  .box .info .field-name {
+    font-weight: bold;
+    flex: 1; /* Take up space on the left */
+    text-align: left;
+    padding-right: 10px;
+  }
+  
+  .box .info .field-value {
+    flex: 2; /* Take up more space on the right */
+    text-align: right;
+  }
+  
+  .box1 {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .box .photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 100px;
+  }
+  
+  .box .photo img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .box .photo .edit-button {
+    padding: 8px 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .box .photo .edit-button:hover {
+    background-color: #0b3cc1;
+  }
+  
+  .field-value {
+    color: var(--text-color);
+  }
+
+  #news-box{
+
+    width: 50vw;
+    height: 30vh;
+
+    background-color: var(--box3-color);
+    transition: var(--tran-05);
+  }
+
+
+
+
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -20,7 +136,7 @@
     --toggle-color: #DDD;
     --box1-color: #4DA3FF;
     --box2-color: #FFE6AC;
-    --box3-color: #E7D1FC;
+    --box3-color: #ddfffc;
     --title-icon-color: #fff;
     
     /* ====== Transition ====== */
@@ -379,8 +495,13 @@ nav.close ~ .dashboard .top{
     margin-left: 10px;
 }
 
+/**/
 
 
+
+
+
+/**/
 .dash-content .boxes{
     display: flex;
     align-items: center;
