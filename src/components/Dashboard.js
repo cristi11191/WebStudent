@@ -5,7 +5,8 @@ import Overview from './Overview';
 import Activity from './Activity';
 import StyleSettings from './StyleSettings';
 import { UilBars } from '@iconscout/react-unicons';
-import useSidebar from '../hooks/useSidebar';   
+import useSidebar from '../hooks/useSidebar'; 
+import NotificationPanel from './NotificationList';  
 
 const Dashboard = () => {
     const [isSidebarOpen, toggleSidebar] = useSidebar();
@@ -26,6 +27,7 @@ const Dashboard = () => {
             <div className="dash-content">
                 <Overview />
                 <Activity />
+                <NotificationPanel />
             </div>
             <StyleSettings onColorChange={handleColorChange} />
         </section>

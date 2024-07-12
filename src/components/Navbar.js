@@ -7,7 +7,7 @@ import useDarkMode from '../hooks/useDarkMode';
 
 const Navbar = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
-
+  
   return (
     <nav>
       <div className="logo-name">
@@ -21,7 +21,7 @@ const Navbar = () => {
           <li><a href="#"><UilEstate class="nav-imgs"/><span className="link-name">Dashboard</span></a></li>
           <li><a href="#"><UilFilesLandscapes class="nav-imgs"/><span className="link-name">Content</span></a></li>
           <li><a href="#"><UilChart class="nav-imgs"/><span className="link-name">Analytics</span></a></li>
-          <li><a href="#"><UilThumbsUp class="nav-imgs"/><span className="link-name">Like</span></a></li>
+          <li><a href="#>"><UilThumbsUp class="nav-imgs"/><span className="link-name">Like</span></a></li>
           <li><a href="#"><UilComments class="nav-imgs"/><span className="link-name">Comment</span></a></li>
           <li><a href="#"><UilShare class="nav-imgs"/><span className="link-name">Share</span></a></li>
         </ul>
@@ -33,6 +33,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      
     </nav>
   );
 };
