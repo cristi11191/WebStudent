@@ -28,7 +28,7 @@ app.post('/api/login', async (req, res) => {
 
     try {
         const connection = await pool.getConnection();
-        const [rows] = await connection.query('SELECT * FROM users WHERE email = ?', [email]);
+        const [rows] = await connection.query('SELECT * FROM users WHERE email = ?;', [email]);
         connection.release();
 
         if (rows.length > 0) {

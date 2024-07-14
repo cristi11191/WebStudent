@@ -11,9 +11,70 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.LoginBody {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+.logbtn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color, #3498db);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logbtn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .login-container {
+      width: 90%;
+      padding: 15px;
+    }
+  }
 
-
-
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Form styles */
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
 
 /**/
 
@@ -85,7 +146,12 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+  .edit-button{
+    background-color: var(--primary-btn-color) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 5px !important;
+    transition: background-color border 0.3s ease !important;
+  }
   .box .photo .edit-button:hover {
     background-color: #0b3cc1;
   }
@@ -138,6 +204,7 @@
     --box2-color: #FFE6AC;
     --box3-color: #ddfffc;
     --title-icon-color: #fff;
+    --primary-btn-color: #4c7af8;
     
     /* ====== Transition ====== */
     --tran-05: all 0.5s ease;
@@ -160,6 +227,7 @@ body.dark{
     --box2-color: #3A3B3C;
     --box3-color: #3A3B3C;
     --title-icon-color: #CCC;
+    --primary-btn-color: #3A3B3C;
 }
 /* === Custom Scroll Bar CSS === */
 ::-webkit-scrollbar {
