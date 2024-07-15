@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     // Clear user authentication data (e.g., tokens)
-    localStorage.removeItem('authToken'); // Assuming you're using localStorage for auth tokens
+    localStorage.removeItem('token'); // Assuming you're using localStorage for auth tokens
     navigate('/login');
   };
   if (location.pathname === '/login' || location.pathname === '/') {
