@@ -9,6 +9,8 @@ import useSidebar from '../hooks/useSidebar';
 import apiService from '../services/apiService';
 import '../styles/styles.css';
 import Navbar from '../components/Navbar';
+
+
 const Dashboard = () => {
   const [isSidebarOpen, toggleSidebar] = useSidebar();
   const [primaryColor, setPrimaryColor] = useState('#3498db');
@@ -26,8 +28,8 @@ const Dashboard = () => {
   }
 
   return (
-    <section className="dashboard" style={{ '--primary-color': primaryColor }}>
-      <div className="top">
+    <section className={`dashboard ${isSidebarOpen ? '' : 'close'}`} style={{ '--primary-color': primaryColor }}>
+      <div className={`top ${isSidebarOpen ? '' : 'close'}`}>
         <Navbar />
         <UilBars className="sidebar-toggle" onClick={toggleSidebar}/>
         <SearchBox />

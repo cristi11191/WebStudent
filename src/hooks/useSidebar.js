@@ -7,6 +7,7 @@ const useSidebar = () => {
   });
 
   useEffect(() => {
+    console.log('Sidebar state changed:', isSidebarOpen);
     const sidebar = document.querySelector('nav');
     if (isSidebarOpen) {
       sidebar.classList.remove('close');
