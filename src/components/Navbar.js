@@ -6,6 +6,7 @@ import '../styles/styles.css';
 import logo from '../assets/images/logo.png';
 import { UilMoon, UilSignout, UilEstate, UilFilesLandscapes, UilChart, UilThumbsUp, UilComments, UilShare } from '@iconscout/react-unicons';
 import useDarkMode from '../hooks/useDarkMode';
+import Avatar from '@mui/material/Avatar';
 
 const Navbar = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
@@ -25,7 +26,7 @@ const Navbar = () => {
     <nav>
       <div className="logo-name">
         <div className="logo-image">
-          <img src={logo} alt="Logo" />
+          <Avatar alt="Remy Sharp" src={logo} />
         </div>
         <span className="logo_name" id="username">WebStudent</span>
       </div>
