@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../services/apiService'; // Adjust the path if necessary
+import { login, fetchCurrentUser } from '../services/apiService'; // Adjust the path if necessary
 import '../styles/styles.css';
 
 const Login = () => {
@@ -12,9 +12,13 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await login(email, password); // Use the imported login function directly
-      console.log('Login successful');
-      // Redirect or navigate to dashboard
-      navigate('/dashboard');
+      const user = await fetchCurrentUser();
+      // Redirect to the appropriate dashboard based on role
+      if (user.user.role === 'Admin') {
+        navigate('/adminpanel');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       console.error('Login error:', error);
     }

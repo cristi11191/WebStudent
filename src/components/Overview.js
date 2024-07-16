@@ -50,6 +50,10 @@ const Overview = () => {
                 <span className="field-name text">Email:</span>
                 <span className="field-value">{user.email}</span>
               </div>
+              <div className="field">
+                <span className="field-name text">Role:</span>
+                <span className="field-value">{user.role}</span>
+              </div>
             
             </div>
           </Card.Body>

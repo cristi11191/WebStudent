@@ -72,6 +72,7 @@ export const login = async (email, password) => {
 export const fetchCurrentUser = async () => {
   try {
     const response = await axiosInstance.get('current-user');
+    localStorage.setItem('role', response.data.user.role);
     return response.data;
   } catch (error) {
     throw error;
