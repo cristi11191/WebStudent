@@ -20,7 +20,7 @@ const App = () => {
 
   const AdminRoute = ({ element }) => {
     const role = getUserRole();
-    return isAuthenticated() && role === 'admin' ? element : <Navigate to="/login" />;
+    return isAuthenticated() && role === 'Admin' ? element : <Navigate to="/login" />;
   };
 
 

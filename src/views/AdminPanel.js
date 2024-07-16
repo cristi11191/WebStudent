@@ -8,7 +8,7 @@ import { UilBars } from '@iconscout/react-unicons';
 import useSidebar from '../hooks/useSidebar';
 import apiService from '../services/apiService';
 import '../styles/styles.css';
-import ANavbar from '../admin-components/Navbar';
+import Navbar from '../admin-components/Navbar';
 
 
 const Dashboard = () => {
@@ -28,10 +28,9 @@ const Dashboard = () => {
   return (
     <section className={`dashboard ${isSidebarOpen ? '' : 'close'}`} style={{ '--primary-color': primaryColor }}>
       <div className={`top ${isSidebarOpen ? '' : 'close'}`}>
-        <ANavbar />
+        <Navbar />
         <UilBars className="sidebar-toggle" onClick={toggleSidebar}/>
         <SearchBox />
-        {/* <img src="images/profile.jpg" alt=""> */}
       </div>
       <div className="dash-content">
         <Overview />

@@ -18,6 +18,11 @@ const Login = () => {
       const response = await login(email, password); // Use the imported login function directly
       const user = await fetchCurrentUser();
       const notificationMessage = { message: 'Login successful', type: 'success' };
+
+      
+      console.log('User role:', user.user.role);
+      console.log('Navigating to:', user.user.role === 'Admin' ? '/adminpanel' : '/dashboard');
+    
       // Redirect to the appropriate dashboard based on role
       if (user.user.role === 'Admin') {
         navigate('/adminpanel', { state: notificationMessage });
