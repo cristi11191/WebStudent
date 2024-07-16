@@ -18,21 +18,22 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--login-background-color);
   }
 .logbtn {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: var(--primary-color, #3498db);
+    background-color: var(--log-btn-color) !important;
     color: white;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
   }
   
   .logbtn:hover {
-    background-color: #2980b9;
+    background-color: #8ac4eb !important;
   }
   
   /* Responsive design */
@@ -50,10 +51,32 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    position: relative;
   }
   
   /* Form styles */
   .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+body.dark .logbtn  .logintext{
+    font-weight: bold;
+    
+  }
+  body.dark .logbtn  {
+    background-color: var(--log-btn-color);
+  }
+  
+  body.dark .logbtn:hover {
+    background-color: #2980b9;
+    color: var(--white-color);
+  }
+  
+  
+
+/* Form styles */
+.login-container form {
     display: flex;
     flex-direction: column;
   }
@@ -74,9 +97,9 @@
     border-radius: 5px;
     width: 100%;
   }
-  
-
 /**/
+
+
 
 
 
@@ -205,7 +228,9 @@
     --box3-color: #ddfffc;
     --title-icon-color: #fff;
     --primary-btn-color: #4c7af8;
-    
+    --login-background-color: #f0f0f0;
+    --log-btn-color: #FFF;
+
     /* ====== Transition ====== */
     --tran-05: all 0.5s ease;
     --tran-03: all 0.3s ease;
@@ -228,6 +253,8 @@ body.dark{
     --box3-color: #3A3B3C;
     --title-icon-color: #CCC;
     --primary-btn-color: #3A3B3C;
+    --login-background-color: #3A3B3C;
+    --log-btn-color: #999999ab;
 }
 /* === Custom Scroll Bar CSS === */
 ::-webkit-scrollbar {
