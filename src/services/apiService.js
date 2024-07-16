@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Alert } from '@rewind-ui/core';
 
 const baseURL = 'http://127.0.0.1:8000/api/';
 
@@ -65,7 +64,6 @@ export const login = async (email, password) => {
     axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
     return response.data;
   } catch (error) {
-    <Alert variant="danger" title="Refresh token failed:">{error}</Alert>
     throw error;
   }
 };
@@ -77,7 +75,6 @@ export const fetchCurrentUser = async () => {
     localStorage.setItem('role', response.data.user.role);
     return response.data;
   } catch (error) {
-    <Alert variant="danger" title="Refresh token failed:">{error}</Alert>
     throw error;
   }
 };
