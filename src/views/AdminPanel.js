@@ -33,7 +33,6 @@ const Dashboard = () => {
         <SearchBox />
       </div>
       <div className="dash-content">
-        <Overview />
         <Activity />
       </div>
     </section>
