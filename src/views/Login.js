@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login, fetchCurrentUser } from '../services/apiService'; // Adjust the path if necessary
 import '../styles/styles.css';
+import { Alert } from '@rewind-ui/core';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const Login = () => {
         navigate('/dashboard');
       }
     } catch (error) {
-      console.error('Login error:', error);
+      <Alert variant="danger" title="Alert!">{error}</Alert>
     }
   };
   
