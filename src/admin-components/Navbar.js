@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import '../styles/styles.css';
 import logo from '../assets/images/logo.png';
-import { UilMoon, UilSignout, UilEstate, UilFilesLandscapes } from '@iconscout/react-unicons';
+import { UilMoon, UilSignout, UilEstate,  UilUser } from '@iconscout/react-unicons';
 import useDarkMode from '../hooks/useDarkMode';
 import Avatar from '@mui/material/Avatar';
 
@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="menu-items">
         <ul className="nav-links">
           <li><a href="#"><UilEstate className="nav-imgs"/><span className="link-name">Dashboard</span></a></li>
-          <li><a href="#"><UilFilesLandscapes className="nav-imgs"/><span className="link-name">Content</span></a></li>
+          <li><a href="#"><UilUser className="nav-imgs"/><span className="link-name">Users</span></a></li>
         </ul>
         <ul className="logout-mode">
           <li><a href="#" onClick={handleLogout}><UilSignout className="nav-imgs"/><span className="link-name">Logout</span></a></li>
