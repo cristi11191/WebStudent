@@ -18,9 +18,10 @@ const Login = ({ showNotification }) => {
     e.preventDefault();
     try {
       const response = await login(email, password); 
+      showNotification('Login successful', 'success');
       const user = await fetchCurrentUser();
 
-      showNotification('Login successful', 'success');
+      
 
       if (user.user.role === 'Admin') {
         navigate('/adminpanel');
@@ -30,7 +31,7 @@ const Login = ({ showNotification }) => {
     } catch (error) {
 
       const errorMessage = error.response?.data?.error || 'An unknown error occurred.';
-      showNotification(`Login Failed: ${errorMessage}`, 'error');
+      showNotification(`Login Failed: ${error}`, 'error');
     }
   };
 

@@ -23,34 +23,56 @@ const refreshToken = async () => {
 };
 
 // Interceptor to check and refresh token before requests
+// Network error handler
+const handleNetworkError = (error) => {
+  Notification({ message: 'Network Error: Please check your internet connection or try again later.', type: 'error' });
+  return Promise.reject(error);
+};
+
+// 401 Unauthorized error handler
+const handleUnauthorizedError = async (originalRequest) => {
+  if (!originalRequest._retry) {
+    originalRequest._retry = true;
+    try {
+      const newToken = await refreshToken();
+      originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
+      return axiosInstance(originalRequest);
+    } catch (refreshError) {
+      console.error('Refresh token failed:', refreshError);
+      localStorage.removeItem('token');
+      return Promise.reject(refreshError);
+    }
+  }
+  return Promise.reject(originalRequest);
+};
+
+// 403 Forbidden error handler
+const handleForbiddenError = (error) => {
+  console.error('Unauthorized access:', error);
+  localStorage.removeItem('token');
+  window.location.replace('/login');
+  return Promise.reject(error);
+};
+
+// Response interceptor
 axiosInstance.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
 
     if (!error.response) {
-      // Network error (server offline or no internet connection)
-      Notification({ message: 'Network Error: Please check your internet connection or try again later.', type: 'error' });
-      return Promise.reject(error);
+      return handleNetworkError(error);
     }
 
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      try {
-        const newToken = await refreshToken();
-        originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
-        return axiosInstance(originalRequest);
-      } catch (refreshError) {
-        console.error('Refresh token failed:', refreshError);
-        localStorage.removeItem('token');
-        return Promise.reject(refreshError);
-      }
-    } else if (error.response.status === 403) {
-      console.error('Unauthorized access:', error);
-      localStorage.removeItem('token');
-      window.location.replace('/login');
+    if (error.response.status === 401) {
+      return handleUnauthorizedError(originalRequest);
     }
-    return Promise.reject(error);
+
+    if (error.response.status === 403) {
+      return handleForbiddenError(error);
+    }
+
+    return Promise.reject(error); // Reject other errors
   }
 );
 
