@@ -43,7 +43,6 @@ axiosInstance.interceptors.response.use(
       } catch (refreshError) {
         console.error('Refresh token failed:', refreshError);
         localStorage.removeItem('token');
-        window.location.replace('/login');
         return Promise.reject(refreshError);
       }
     } else if (error.response.status === 403) {
