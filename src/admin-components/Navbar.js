@@ -1,11 +1,12 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import '../styles/styles.css';
 import logo from '../assets/images/logo.png';
 import { UilMoon, UilSignout, UilEstate,  UilUser } from '@iconscout/react-unicons';
 import useDarkMode from '../hooks/useDarkMode';
 import Avatar from '@mui/material/Avatar';
+import CreationForm from './UserCreation';
 
 const Navbar = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
@@ -20,6 +21,8 @@ const Navbar = () => {
     return null;
   }
 
+
+
   return (
     <nav>
       <div className="logo-name">
@@ -30,8 +33,8 @@ const Navbar = () => {
       </div>
       <div className="menu-items">
         <ul className="nav-links">
-          <li><a href="#"><UilEstate className="nav-imgs"/><span className="link-name">Dashboard</span></a></li>
-          <li><a href="#"><UilUser className="nav-imgs"/><span className="link-name">Users</span></a></li>
+          <li><Link to="/adminpanel"><UilEstate className="nav-imgs"/><span className="link-name">Dashboard</span></Link></li>
+          <li><Link to="/users"><UilUser className="nav-imgs"/><span className="link-name">Users</span></Link></li>
         </ul>
         <ul className="logout-mode">
           <li><a href="#" onClick={handleLogout}><UilSignout className="nav-imgs"/><span className="link-name">Logout</span></a></li>

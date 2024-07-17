@@ -2,7 +2,8 @@ import React , {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
-import AdminPanel from './views/AdminPanel';
+import AdminPanel from './views-admin/AdminPanel';
+import AdminUsers from './views-admin/AdminUsers';
 import Notification from './alerts/ErrorAlert';
 import AuthRoute from './routes/AuthRoutes'; 
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/login" element={<Login showNotification={showNotification}/>} />
         <Route path="/dashboard" element={<AuthRoute element={<Dashboard showNotification={showNotification}/>} />} />
         <Route path="/adminpanel" element={<AuthRoute requiredRole="Admin" element={<AdminPanel showNotification={showNotification}/>} />} />
+        <Route path="/users" element={<AuthRoute requiredRole="Admin" element={<AdminUsers showNotification={showNotification}/>} />} />
         <Route path="/" element={<Login showNotification={showNotification}/>} />
         </Routes>
     </Router>
