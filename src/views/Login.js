@@ -1,11 +1,10 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, fetchCurrentUser } from '../services/apiService'; // Adjust the path if necessary
+import { login, fetchCurrentUser } from '../services/apiService';
 import '../styles/styles.css';
 import '../styles/login.css';
 import Button from '@mui/material/Button';
-import { UilMoon, UilSun } from '@iconscout/react-unicons';
 import useDarkMode from '../hooks/useDarkMode';
 
 const Login = ({ showNotification }) => {
@@ -16,14 +15,12 @@ const Login = ({ showNotification }) => {
 
 
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
     try {
-      const response = await login(email, password); // Use the imported login function directly
+      const response = await login(email, password); 
       const user = await fetchCurrentUser();
 
       showNotification('Login successful', 'success');
-      // Redirect to the appropriate dashboard based on role
 
       if (user.user.role === 'Admin') {
         navigate('/adminpanel');

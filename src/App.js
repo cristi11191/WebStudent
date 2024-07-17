@@ -4,7 +4,7 @@ import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import AdminPanel from './views/AdminPanel';
 import Notification from './alerts/ErrorAlert';
-import AuthRoute from './routes/AuthRoutes'; // Adjust the path if necessary
+import AuthRoute from './routes/AuthRoutes'; 
 
 const App = () => {
   const [notification, setNotification] = useState({ message: '', type: '', open: false });
