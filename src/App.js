@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './views/General/Login';
+import Login from './views/Auth/Login';
 import Dashboard from './views/Students/Dashboard';
 import AdminPanel from './views/Admin/AdminPanel';
 import AdminUsers from './components-admin/AdminUsers';
