@@ -1,9 +1,9 @@
 import React , {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './views/Login';
-import Dashboard from './views/Dashboard';
-import AdminPanel from './views-admin/AdminPanel';
-import AdminUsers from './views-admin/AdminUsers';
+import Login from './views/General/Login';
+import Dashboard from './views/Students/Dashboard';
+import AdminPanel from './views/Admin/AdminPanel';
+import AdminUsers from './components-admin/AdminUsers';
 import Notification from './alerts/ErrorAlert';
 import AuthRoute from './routes/AuthRoutes'; 
 

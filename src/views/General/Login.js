@@ -1,11 +1,11 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, fetchCurrentUser } from '../services/apiService';
+import { login, fetchCurrentUser } from '../../services/apiService';
 import '../styles/styles.css';
 import '../styles/login.css';
 import Button from '@mui/material/Button';
-import useDarkMode from '../hooks/useDarkMode';
+import useDarkMode from '../../hooks/useDarkMode';
 
 const Login = ({ showNotification }) => {
   const [email, setEmail] = useState('');

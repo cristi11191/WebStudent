@@ -1,15 +1,15 @@
 
 import React ,{useState} from 'react';
 import { useNavigate,Navigate } from 'react-router-dom';
-import SearchBox from '../components/SearchBox';
-import UserCreation from '../admin-components/UserCreation';
+import SearchBox from '../../components/SearchBox';
+import Activity from '../../components/Activity';
 import { UilBars } from '@iconscout/react-unicons';
-import useSidebar from '../hooks/useSidebar';
+import useSidebar from '../../hooks/useSidebar';
 import '../styles/styles.css';
-import Navbar from '../admin-components/Navbar';
+import Navbar from '../Admin/Navbar';
 
 
-const AdminUsers = () => {
+const Dashboard = () => {
   const [isSidebarOpen, toggleSidebar] = useSidebar();
   const [primaryColor, setPrimaryColor] = useState('#3498db');
   const navigate = useNavigate();
@@ -31,10 +31,10 @@ const AdminUsers = () => {
         <SearchBox />
       </div>
       <div className="dash-content">
-        <UserCreation />
+        <Activity />
       </div>
     </section>
   );
 };
 
-export default AdminUsers;
+export default Dashboard;
