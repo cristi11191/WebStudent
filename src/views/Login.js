@@ -21,7 +21,6 @@ const Login = ({ showNotification }) => {
       showNotification('Login successful', 'success');
       const user = await fetchCurrentUser();
 
-      
 
       if (user.user.role === 'Admin') {
         navigate('/adminpanel');
@@ -30,8 +29,8 @@ const Login = ({ showNotification }) => {
       }
     } catch (error) {
 
-      const errorMessage = error.response?.data?.error || 'An unknown error occurred.';
-      showNotification(`Login Failed: ${error}`, 'error');
+      const errorMessage = error.message || 'An unknown error occurred.';
+      showNotification(`Login Failed: ${errorMessage}`, 'error');
     }
   };
 

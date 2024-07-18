@@ -26,7 +26,7 @@ const refreshToken = async () => {
 // Network error handler
 const handleNetworkError = (error) => {
   Notification({ message: 'Network Error: Please check your internet connection or try again later.', type: 'error' });
-  return Promise.reject(error);
+  return Promise.reject({ message: 'Network Error: Please check your internet connection or try again later.', ...error });
 };
 
 // 401 Unauthorized error handler
@@ -40,10 +40,10 @@ const handleUnauthorizedError = async (originalRequest) => {
     } catch (refreshError) {
       console.error('Refresh token failed:', refreshError);
       localStorage.removeItem('token');
-      return Promise.reject(refreshError);
+      return Promise.reject(new Error('Unauthorized: Invalid credentials.'));
     }
   }
-  return Promise.reject(originalRequest);
+  return Promise.reject(new Error('Unauthorized: Invalid credentials.'));
 };
 
 // 403 Forbidden error handler
@@ -51,7 +51,7 @@ const handleForbiddenError = (error) => {
   console.error('Unauthorized access:', error);
   localStorage.removeItem('token');
   window.location.replace('/login');
-  return Promise.reject(error);
+  return Promise.reject({ message: 'Forbidden: Access is denied.', ...error });
 };
 
 // Response interceptor
@@ -71,7 +71,9 @@ axiosInstance.interceptors.response.use(
     if (error.response.status === 403) {
       return handleForbiddenError(error);
     }
-
+    if (error.response.status >= 500) {
+      return Promise.reject({ message: 'Server Error: Please try again later.', ...error });
+    }
     return Promise.reject(error); // Reject other errors
   }
 );
